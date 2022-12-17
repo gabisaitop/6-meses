@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import Challenge  from "./Pages/Challenge"
+import Home  from "./Pages/Home"
+import DateGenerator  from "./Pages/DateGenerator"
+import GaleryPage  from "./Pages/Galery"
+import NotFoundPage  from "./Pages/NotFound"
+import StartingPage  from "./Pages/StartingPage"
+import CssBaseline from '@mui/material/CssBaseline';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+    <CssBaseline>
+      <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<StartingPage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path='/challenge' element={<Challenge />} />
+          <Route path='/dates' element={<DateGenerator />} />
+          <Route path='/gallery' element={<GaleryPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+      </Routes>
+      </BrowserRouter>
+    </CssBaseline>
+  </>
   );
 }
-
-export default App;
