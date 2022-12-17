@@ -25,6 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,5 +49,6 @@
   },
   "devDependencies": {
     "react-router-dom": "^6.3.0"
-  }
+  },
+  "homepage" : "https://gabisaitop.github.io/6-meses"
 }
